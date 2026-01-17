@@ -12,7 +12,7 @@
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Fri, 16 Jan 2026 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>제미나이 CLI, 폴더(프로젝트)별로 설정하는 방법</title>
+  <title>제미나이 CLI 폴더별 설정 방법</title>
   <dc:creator>김영훈 </dc:creator>
   <link>https://your-website-url.example.com/posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html</link>
   <description><![CDATA[ 
@@ -126,7 +126,7 @@ font-style: inherit;">}</span></span></code></pre></div></div>
   <category>Tutorial</category>
   <guid>https://your-website-url.example.com/posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html</guid>
   <pubDate>Fri, 16 Jan 2026 15:00:00 GMT</pubDate>
-  <media:content url="https://via.placeholder.com/600x400.png?text=Gemini+CLI" medium="image"/>
+  <media:content url="https://images.unsplash.com/photo-1677442136019-21780ecad995" medium="image"/>
 </item>
 <item>
   <title>Post With Code</title>
