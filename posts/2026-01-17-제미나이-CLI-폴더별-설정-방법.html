@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>blog</title>
+<title>cli-폴더별-설정-방법 – blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,77 +103,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
+<link rel="stylesheet" href="../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="blog" href="index.xml" data-external="1"></head>
-
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">blog</span>
     </a>
   </div>
@@ -151,7 +126,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -172,127 +147,90 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">blog</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<p># 제미나이 CLI, 폴더(프로젝트)별로 설정하는 방법</p>
+<p>제미나이(Gemini) CLI를 사용하다 보면, 각 프로젝트의 성격에 따라 다른 설정을 적용하고 싶을 때가 있습니다. 예를 들어, 어떤 프로젝트는 <code>gemini-1.5-pro</code> 모델을 사용하고, 다른 프로젝트는 빠른 응답이 중요한 <code>gemini-1.5-flash</code> 모델을 사용하고 싶을 수 있죠.</p>
+<p>매번 <code>gemini config set</code> 명령어로 설정을 바꾸는 것은 번거롭습니다. 다행히 제미나이 CLI는 **폴더별로 설정을 다르게 적용**할 수 있는 편리한 기능을 제공합니다. 오늘 배운 내용을 정리해 보겠습니다.</p>
+<p>## 폴더별 설정은 어떻게 적용되나요?</p>
+<p>제미나이 CLI는 명령어를 실행하는 현재 폴더부터 시작해서 상위 폴더로 거슬러 올라가며 <code>.gemini/config.json</code> 파일을 찾습니다. 가장 먼저 발견되는 설정 파일을 사용하고, 만약 최상위 폴더까지 파일을 찾지 못하면 전역(global) 설정을 따르게 됩니다.</p>
+<p>이러한 원리 덕분에 우리는 각 프로젝트 폴더에 자신만의 <code>config.json</code>을 만들어 독립적인 설정을 유지할 수 있습니다.</p>
+<p>## 설정 방법</p>
+<p>방법은 아주 간단합니다.</p>
+<p>**1. 프로젝트 루트에 <code>.gemini</code> 폴더 생성**</p>
+<p>설정을 적용하고 싶은 프로젝트의 최상위 폴더(루트)로 이동하여 <code>.gemini</code>라는 이름의 폴더를 만듭니다.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> .gemini</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>**2. <code>.gemini</code> 폴더 내에 <code>config.json</code> 파일 생성**</p>
+<p>방금 만든 <code>.gemini</code> 폴더 안에 <code>config.json</code>이라는 파일을 생성합니다.</p>
+<p>**3. <code>config.json</code> 파일에 원하는 설정 추가**</p>
+<p>이제 <code>config.json</code> 파일을 열어 해당 프로젝트에서만 사용하고 싶은 설정을 JSON 형식으로 추가합니다.</p>
+<p>## 예시: 프로젝트별로 다른 모델 사용하기</p>
+<p>예를 들어, 두 개의 다른 프로젝트가 있다고 가정해 보겠습니다.</p>
+<p>- <code>project-A</code> : 고품질의 결과물이 중요한 웹 개발 프로젝트</p>
+<p>- <code>project-B</code> : 빠른 아이디어 스케치가 중요한 블로그 초안 작성 프로젝트</p>
+<p>**project-A 설정**</p>
+<p><code>project-A</code> 폴더의 <code>.gemini/config.json</code> 파일에는 <code>gemini-1.5-pro</code> 모델을 사용하도록 설정합니다.</p>
+<p><code>./project-A/.gemini/config.json</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="er">&amp;nbsp;</span> <span class="dt">"model"</span><span class="fu">:</span> <span class="st">"gemini-1.5-pro"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>**project-B 설정**</p>
+<p><code>project-B</code> 폴더의 <code>.gemini/config.json</code> 파일에는 <code>gemini-1.5-flash</code> 모델을 사용하도록 설정합니다.</p>
+<p><code>./project-B/.gemini/config.json</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="er">&amp;nbsp;</span> <span class="dt">"model"</span><span class="fu">:</span> <span class="st">"gemini-1.5-flash"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>두 모델의 차이점이 궁금하신가요? 아래 표를 통해 각 모델의 특징과 권장 사용 사례를 확인해 보세요.</p>
+<div class="line-block">구분 | Gemini 1.5 Pro | Gemini 1.5 Flash |</div>
+<div class="line-block">:— | :— | :— |</div>
+<div class="line-block">**주요 특징** | 높은 정확도와 성능, 복잡한 추론 작업에 최적화 | 빠르고 비용 효율적인 작업에 최적화 |</div>
+<div class="line-block">**주요 사용 사례** | 심층 분석, 복잡한 코드 생성, 고품질 콘텐츠 작성 | 빠른 요약, 챗봇, 캡션 생성, 간단한 자동화 |</div>
+<div class="line-block">**처리 속도** | 상대적으로 느림 | 매우 빠름 |</div>
+<div class="line-block">**비용** | 상대적으로 높음 | 상대적으로 낮음 |</div>
+<div class="line-block">**컨텍스트 창** | 최대 100만 토큰 | 최대 100만 토큰 |</div>
+<p>이처럼 각 모델의 장단점을 파악하면, 프로젝트의 목표에 가장 적합한 모델을 선택하여 비용과 효율을 모두 최적화할 수 있습니다.</p>
+<p>## ⚠️ 중요: API 키 보안 및 <code>.gitignore</code> 설정</p>
+<p>프로젝트별 설정을 사용하면 매우 편리하지만, 한 가지 주의해야 할 점이 있습니다. 바로 **API 키와 같은 민감한 정보를 다루는 방법**입니다.</p>
+<p>만약 <code>config.json</code> 파일에 API 키를 직접 추가하고 이 파일을 Git 저장소에 커밋하면, API 키가 외부에 노출되어 보안 문제가 발생할 수 있습니다.</p>
+<p>### 권장하는 방법</p>
+<p>1. **API 키는 전역(Global) 설정에만 보관하세요.**</p>
+<p>&nbsp; - API 키는 <code>gemini config set api\_key YOUR\_API\_KEY</code> 명령어를 통해 한 번만 설정하면, 홈 디렉터리의 전역 설정 파일(<code>~/.gemini/config.json</code> 또는 <code>C:\\Users\\사용자명\\.gemini\\config.json</code>)에 안전하게 저장됩니다.</p>
+<p>&nbsp; - 프로젝트별 <code>config.json</code>에는 모델이나 다른 안전한 설정만 지정하세요. 제미나이 CLI는 프로젝트 설정에 API 키가 없으면 자동으로 전역 설정에서 가져와 사용합니다.</p>
+<p>2. **실수로 민감한 정보를 커밋하지 않도록 <code>.gitignore</code>를 사용하세요.**</p>
+<p>&nbsp; - 만약 프로젝트별 <code>config.json</code>에 민감한 정보를 포함해야만 하는 특별한 경우가 있다면, 해당 파일이 Git 추적에서 제외되도록 반드시 <code>.gitignore</code> 파일에 추가해야 합니다.</p>
+<p>&nbsp; - 프로젝트 루트 폴더에 <code>.gitignore</code> 파일을 만들고 아래 내용을 추가하세요.</p>
+<p>&nbsp; ```gitignore</p>
+<p>&nbsp; # 제미나이 CLI 설정 파일 (민감 정보 포함 가능성)</p>
+<p>&nbsp; .gemini/config.json</p>
+<p>&nbsp; ```</p>
+<p>&nbsp; 이렇게 하면 <code>config.json</code> 파일은 팀원들과 공유되지 않으며, 각자의 로컬 환경에만 유지됩니다.</p>
+<p>## 장점</p>
+<p>- **프로젝트 독립성**: 전역 설정을 건드리지 않고 각 프로젝트에 맞는 환경을 구축할 수 있습니다.</p>
+<p>- **협업 효율 증가**: <code>.gemini/config.json</code> 파일을 Git과 같은 버전 관리 시스템에 포함하면, 팀원 모두가 동일한 프로젝트 설정을 공유할 수 있습니다. (단, 위에 설명된 보안 지침을 반드시 준수하세요!)</p>
+<p>- **컨텍스트 자동 전환**: 프로젝트 폴더를 이동하는 것만으로 설정이 자동으로 바뀌므로, 수동으로 설정을 변경하는 번거로움이 사라집니다.</p>
+<p>## 마무리</p>
+<p>오늘은 제미나이 CLI의 폴더별 설정 방법에 대해 알아보았습니다. 이 작은 팁 하나가 개발 및 문서 작업의 효율을 크게 높여줄 수 있습니다. 앞으로 여러 프로젝트에서 제미나이를 활용할 때 꼭 적용해 보세요!</p>
+<p>오늘도 즐거운 코딩 하세요</p>
+<p>```</p>
 
 
 
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1768614948371" data-listing-reading-time-sort="3" data-listing-word-count-sort="585">
-<div class="thumbnail"><a href="./posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html" class="no-external"></a>
-</h3>
-<div class="delink listing-description"><a href="./posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html" class="no-external">
-# 제미나이 CLI, 폴더(프로젝트)별로 설정하는 방법
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1768402800000" data-listing-file-modified-sort="1768613300162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
-<div class="thumbnail"><a href="./posts/post-with-code/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/post-with-code/image.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/post-with-code/index.html" class="no-external">Post With Code</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/post-with-code/index.html" class="no-external">
-This is a post with executable code.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code/index.html" class="no-external">
-<div class="listing-date">
-Jan 15, 2026
-</div>
-<div class="listing-author">
-Harlow Malloc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="bmV3cw==" data-listing-date-sort="1768143600000" data-listing-file-modified-sort="1768613300163" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<div class="thumbnail"><a href="./posts/welcome/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts\welcome\thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/welcome/index.html" class="no-external">
-This is the first post in a Quarto blog. Welcome!
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Jan 12, 2026
-</div>
-<div class="listing-author">
-Tristan O’Malley
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
