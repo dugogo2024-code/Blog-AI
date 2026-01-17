@@ -1,0 +1,29 @@
+# This workflow is based on the official Quarto publish action:
+# https://github.com/quarto-dev/quarto-actions/tree/main/publish
+
+on:
+  push:
+    branches:
+      - main # Set this to the branch you want to trigger the workflow from
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          # The target branch should be gh-pages, which is the default for GitHub Pages
+          target-branch: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
