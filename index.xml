@@ -10,7 +10,124 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 14 Jan 2026 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 16 Jan 2026 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>제미나이 CLI, 폴더(프로젝트)별로 설정하는 방법</title>
+  <dc:creator>김영훈 </dc:creator>
+  <link>https://your-website-url.example.com/posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p># 제미나이 CLI, 폴더(프로젝트)별로 설정하는 방법</p>
+<p>제미나이(Gemini) CLI를 사용하다 보면, 각 프로젝트의 성격에 따라 다른 설정을 적용하고 싶을 때가 있습니다. 예를 들어, 어떤 프로젝트는 <code>gemini-1.5-pro</code> 모델을 사용하고, 다른 프로젝트는 빠른 응답이 중요한 <code>gemini-1.5-flash</code> 모델을 사용하고 싶을 수 있죠.</p>
+<p>매번 <code>gemini config set</code> 명령어로 설정을 바꾸는 것은 번거롭습니다. 다행히 제미나이 CLI는 **폴더별로 설정을 다르게 적용**할 수 있는 편리한 기능을 제공합니다. 오늘 배운 내용을 정리해 보겠습니다.</p>
+<p>## 폴더별 설정은 어떻게 적용되나요?</p>
+<p>제미나이 CLI는 명령어를 실행하는 현재 폴더부터 시작해서 상위 폴더로 거슬러 올라가며 <code>.gemini/config.json</code> 파일을 찾습니다. 가장 먼저 발견되는 설정 파일을 사용하고, 만약 최상위 폴더까지 파일을 찾지 못하면 전역(global) 설정을 따르게 됩니다.</p>
+<p>이러한 원리 덕분에 우리는 각 프로젝트 폴더에 자신만의 <code>config.json</code>을 만들어 독립적인 설정을 유지할 수 있습니다.</p>
+<p>## 설정 방법</p>
+<p>방법은 아주 간단합니다.</p>
+<p>**1. 프로젝트 루트에 <code>.gemini</code> 폴더 생성**</p>
+<p>설정을 적용하고 싶은 프로젝트의 최상위 폴더(루트)로 이동하여 <code>.gemini</code>라는 이름의 폴더를 만듭니다.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"></span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> .gemini</span></code></pre></div></div>
+<p>**2. <code>.gemini</code> 폴더 내에 <code>config.json</code> 파일 생성**</p>
+<p>방금 만든 <code>.gemini</code> 폴더 안에 <code>config.json</code>이라는 파일을 생성합니다.</p>
+<p>**3. <code>config.json</code> 파일에 원하는 설정 추가**</p>
+<p>이제 <code>config.json</code> 파일을 열어 해당 프로젝트에서만 사용하고 싶은 설정을 JSON 형식으로 추가합니다.</p>
+<p>## 예시: 프로젝트별로 다른 모델 사용하기</p>
+<p>예를 들어, 두 개의 다른 프로젝트가 있다고 가정해 보겠습니다.</p>
+<p>- <code>project-A</code> : 고품질의 결과물이 중요한 웹 개발 프로젝트</p>
+<p>- <code>project-B</code> : 빠른 아이디어 스케치가 중요한 블로그 초안 작성 프로젝트</p>
+<p>**project-A 설정**</p>
+<p><code>project-A</code> 폴더의 <code>.gemini/config.json</code> 파일에는 <code>gemini-1.5-pro</code> 모델을 사용하도록 설정합니다.</p>
+<p><code>./project-A/.gemini/config.json</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"></span>
+<span id="cb2-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&amp;nbsp;</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"model"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"gemini-1.5-pro"</span></span>
+<span id="cb2-5"></span>
+<span id="cb2-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<p>**project-B 설정**</p>
+<p><code>project-B</code> 폴더의 <code>.gemini/config.json</code> 파일에는 <code>gemini-1.5-flash</code> 모델을 사용하도록 설정합니다.</p>
+<p><code>./project-B/.gemini/config.json</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"></span>
+<span id="cb3-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb3-3"></span>
+<span id="cb3-4"><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">&amp;nbsp;</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"model"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"gemini-1.5-flash"</span></span>
+<span id="cb3-5"></span>
+<span id="cb3-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<p>두 모델의 차이점이 궁금하신가요? 아래 표를 통해 각 모델의 특징과 권장 사용 사례를 확인해 보세요.</p>
+<div class="line-block">구분 | Gemini 1.5 Pro | Gemini 1.5 Flash |</div>
+<div class="line-block">:— | :— | :— |</div>
+<div class="line-block">**주요 특징** | 높은 정확도와 성능, 복잡한 추론 작업에 최적화 | 빠르고 비용 효율적인 작업에 최적화 |</div>
+<div class="line-block">**주요 사용 사례** | 심층 분석, 복잡한 코드 생성, 고품질 콘텐츠 작성 | 빠른 요약, 챗봇, 캡션 생성, 간단한 자동화 |</div>
+<div class="line-block">**처리 속도** | 상대적으로 느림 | 매우 빠름 |</div>
+<div class="line-block">**비용** | 상대적으로 높음 | 상대적으로 낮음 |</div>
+<div class="line-block">**컨텍스트 창** | 최대 100만 토큰 | 최대 100만 토큰 |</div>
+<p>이처럼 각 모델의 장단점을 파악하면, 프로젝트의 목표에 가장 적합한 모델을 선택하여 비용과 효율을 모두 최적화할 수 있습니다.</p>
+<p>## ⚠️ 중요: API 키 보안 및 <code>.gitignore</code> 설정</p>
+<p>프로젝트별 설정을 사용하면 매우 편리하지만, 한 가지 주의해야 할 점이 있습니다. 바로 **API 키와 같은 민감한 정보를 다루는 방법**입니다.</p>
+<p>만약 <code>config.json</code> 파일에 API 키를 직접 추가하고 이 파일을 Git 저장소에 커밋하면, API 키가 외부에 노출되어 보안 문제가 발생할 수 있습니다.</p>
+<p>### 권장하는 방법</p>
+<p>1. **API 키는 전역(Global) 설정에만 보관하세요.**</p>
+<p>&nbsp; - API 키는 <code>gemini config set api\_key YOUR\_API\_KEY</code> 명령어를 통해 한 번만 설정하면, 홈 디렉터리의 전역 설정 파일(<code>~/.gemini/config.json</code> 또는 <code>C:\\Users\\사용자명\\.gemini\\config.json</code>)에 안전하게 저장됩니다.</p>
+<p>&nbsp; - 프로젝트별 <code>config.json</code>에는 모델이나 다른 안전한 설정만 지정하세요. 제미나이 CLI는 프로젝트 설정에 API 키가 없으면 자동으로 전역 설정에서 가져와 사용합니다.</p>
+<p>2. **실수로 민감한 정보를 커밋하지 않도록 <code>.gitignore</code>를 사용하세요.**</p>
+<p>&nbsp; - 만약 프로젝트별 <code>config.json</code>에 민감한 정보를 포함해야만 하는 특별한 경우가 있다면, 해당 파일이 Git 추적에서 제외되도록 반드시 <code>.gitignore</code> 파일에 추가해야 합니다.</p>
+<p>&nbsp; - 프로젝트 루트 폴더에 <code>.gitignore</code> 파일을 만들고 아래 내용을 추가하세요.</p>
+<p>&nbsp; ```gitignore</p>
+<p>&nbsp; # 제미나이 CLI 설정 파일 (민감 정보 포함 가능성)</p>
+<p>&nbsp; .gemini/config.json</p>
+<p>&nbsp; ```</p>
+<p>&nbsp; 이렇게 하면 <code>config.json</code> 파일은 팀원들과 공유되지 않으며, 각자의 로컬 환경에만 유지됩니다.</p>
+<p>## 장점</p>
+<p>- **프로젝트 독립성**: 전역 설정을 건드리지 않고 각 프로젝트에 맞는 환경을 구축할 수 있습니다.</p>
+<p>- **협업 효율 증가**: <code>.gemini/config.json</code> 파일을 Git과 같은 버전 관리 시스템에 포함하면, 팀원 모두가 동일한 프로젝트 설정을 공유할 수 있습니다. (단, 위에 설명된 보안 지침을 반드시 준수하세요!)</p>
+<p>- **컨텍스트 자동 전환**: 프로젝트 폴더를 이동하는 것만으로 설정이 자동으로 바뀌므로, 수동으로 설정을 변경하는 번거로움이 사라집니다.</p>
+<p>## 마무리</p>
+<p>오늘은 제미나이 CLI의 폴더별 설정 방법에 대해 알아보았습니다. 이 작은 팁 하나가 개발 및 문서 작업의 효율을 크게 높여줄 수 있습니다. 앞으로 여러 프로젝트에서 제미나이를 활용할 때 꼭 적용해 보세요!</p>
+<p>오늘도 즐거운 코딩 하세요</p>
+<p>```</p>
+
+
+
+ ]]></description>
+  <category>Gemini</category>
+  <category>CLI</category>
+  <category>Tutorial</category>
+  <guid>https://your-website-url.example.com/posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html</guid>
+  <pubDate>Fri, 16 Jan 2026 15:00:00 GMT</pubDate>
+  <media:content url="https://via.placeholder.com/600x400.png?text=Gemini+CLI" medium="image"/>
+</item>
 <item>
   <title>Post With Code</title>
   <dc:creator>Harlow Malloc</dc:creator>
