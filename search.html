@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="김영훈">
-<meta name="dcterms.date" content="2026-01-17">
 
-<title>제미나이 CLI 폴더별 설정 방법 – blog</title>
+<title>search – blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,62 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,17 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">blog</span>
     </a>
   </div>
@@ -128,7 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -149,122 +112,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">제미나이 CLI 폴더별 설정 방법</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Gemini</div>
-                <div class="quarto-category">CLI</div>
-                <div class="quarto-category">Tutorial</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>김영훈 </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">January 17, 2026</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-
-<p># 제미나이 CLI, 폴더(프로젝트)별로 설정하는 방법</p>
-<p>제미나이(Gemini) CLI를 사용하다 보면, 각 프로젝트의 성격에 따라 다른 설정을 적용하고 싶을 때가 있습니다. 예를 들어, 어떤 프로젝트는 <code>gemini-1.5-pro</code> 모델을 사용하고, 다른 프로젝트는 빠른 응답이 중요한 <code>gemini-1.5-flash</code> 모델을 사용하고 싶을 수 있죠.</p>
-<p>매번 <code>gemini config set</code> 명령어로 설정을 바꾸는 것은 번거롭습니다. 다행히 제미나이 CLI는 **폴더별로 설정을 다르게 적용**할 수 있는 편리한 기능을 제공합니다. 오늘 배운 내용을 정리해 보겠습니다.</p>
-<p>## 폴더별 설정은 어떻게 적용되나요?</p>
-<p>제미나이 CLI는 명령어를 실행하는 현재 폴더부터 시작해서 상위 폴더로 거슬러 올라가며 <code>.gemini/config.json</code> 파일을 찾습니다. 가장 먼저 발견되는 설정 파일을 사용하고, 만약 최상위 폴더까지 파일을 찾지 못하면 전역(global) 설정을 따르게 됩니다.</p>
-<p>이러한 원리 덕분에 우리는 각 프로젝트 폴더에 자신만의 <code>config.json</code>을 만들어 독립적인 설정을 유지할 수 있습니다.</p>
-<p>## 설정 방법</p>
-<p>방법은 아주 간단합니다.</p>
-<p>**1. 프로젝트 루트에 <code>.gemini</code> 폴더 생성**</p>
-<p>설정을 적용하고 싶은 프로젝트의 최상위 폴더(루트)로 이동하여 <code>.gemini</code>라는 이름의 폴더를 만듭니다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> .gemini</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>**2. <code>.gemini</code> 폴더 내에 <code>config.json</code> 파일 생성**</p>
-<p>방금 만든 <code>.gemini</code> 폴더 안에 <code>config.json</code>이라는 파일을 생성합니다.</p>
-<p>**3. <code>config.json</code> 파일에 원하는 설정 추가**</p>
-<p>이제 <code>config.json</code> 파일을 열어 해당 프로젝트에서만 사용하고 싶은 설정을 JSON 형식으로 추가합니다.</p>
-<p>## 예시: 프로젝트별로 다른 모델 사용하기</p>
-<p>예를 들어, 두 개의 다른 프로젝트가 있다고 가정해 보겠습니다.</p>
-<p>- <code>project-A</code> : 고품질의 결과물이 중요한 웹 개발 프로젝트</p>
-<p>- <code>project-B</code> : 빠른 아이디어 스케치가 중요한 블로그 초안 작성 프로젝트</p>
-<p>**project-A 설정**</p>
-<p><code>project-A</code> 폴더의 <code>.gemini/config.json</code> 파일에는 <code>gemini-1.5-pro</code> 모델을 사용하도록 설정합니다.</p>
-<p><code>./project-A/.gemini/config.json</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="er">&amp;nbsp;</span> <span class="dt">"model"</span><span class="fu">:</span> <span class="st">"gemini-1.5-pro"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>**project-B 설정**</p>
-<p><code>project-B</code> 폴더의 <code>.gemini/config.json</code> 파일에는 <code>gemini-1.5-flash</code> 모델을 사용하도록 설정합니다.</p>
-<p><code>./project-B/.gemini/config.json</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="er">&amp;nbsp;</span> <span class="dt">"model"</span><span class="fu">:</span> <span class="st">"gemini-1.5-flash"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>두 모델의 차이점이 궁금하신가요? 아래 표를 통해 각 모델의 특징과 권장 사용 사례를 확인해 보세요.</p>
-<div class="line-block">구분 | Gemini 1.5 Pro | Gemini 1.5 Flash |</div>
-<div class="line-block">:— | :— | :— |</div>
-<div class="line-block">**주요 특징** | 높은 정확도와 성능, 복잡한 추론 작업에 최적화 | 빠르고 비용 효율적인 작업에 최적화 |</div>
-<div class="line-block">**주요 사용 사례** | 심층 분석, 복잡한 코드 생성, 고품질 콘텐츠 작성 | 빠른 요약, 챗봇, 캡션 생성, 간단한 자동화 |</div>
-<div class="line-block">**처리 속도** | 상대적으로 느림 | 매우 빠름 |</div>
-<div class="line-block">**비용** | 상대적으로 높음 | 상대적으로 낮음 |</div>
-<div class="line-block">**컨텍스트 창** | 최대 100만 토큰 | 최대 100만 토큰 |</div>
-<p>이처럼 각 모델의 장단점을 파악하면, 프로젝트의 목표에 가장 적합한 모델을 선택하여 비용과 효율을 모두 최적화할 수 있습니다.</p>
-<p>## ⚠️ 중요: API 키 보안 및 <code>.gitignore</code> 설정</p>
-<p>프로젝트별 설정을 사용하면 매우 편리하지만, 한 가지 주의해야 할 점이 있습니다. 바로 **API 키와 같은 민감한 정보를 다루는 방법**입니다.</p>
-<p>만약 <code>config.json</code> 파일에 API 키를 직접 추가하고 이 파일을 Git 저장소에 커밋하면, API 키가 외부에 노출되어 보안 문제가 발생할 수 있습니다.</p>
-<p>### 권장하는 방법</p>
-<p>1. **API 키는 전역(Global) 설정에만 보관하세요.**</p>
-<p>&nbsp; - API 키는 <code>gemini config set api\_key YOUR\_API\_KEY</code> 명령어를 통해 한 번만 설정하면, 홈 디렉터리의 전역 설정 파일(<code>~/.gemini/config.json</code> 또는 <code>C:\\Users\\사용자명\\.gemini\\config.json</code>)에 안전하게 저장됩니다.</p>
-<p>&nbsp; - 프로젝트별 <code>config.json</code>에는 모델이나 다른 안전한 설정만 지정하세요. 제미나이 CLI는 프로젝트 설정에 API 키가 없으면 자동으로 전역 설정에서 가져와 사용합니다.</p>
-<p>2. **실수로 민감한 정보를 커밋하지 않도록 <code>.gitignore</code>를 사용하세요.**</p>
-<p>&nbsp; - 만약 프로젝트별 <code>config.json</code>에 민감한 정보를 포함해야만 하는 특별한 경우가 있다면, 해당 파일이 Git 추적에서 제외되도록 반드시 <code>.gitignore</code> 파일에 추가해야 합니다.</p>
-<p>&nbsp; - 프로젝트 루트 폴더에 <code>.gitignore</code> 파일을 만들고 아래 내용을 추가하세요.</p>
-<p>&nbsp; ```gitignore</p>
-<p>&nbsp; # 제미나이 CLI 설정 파일 (민감 정보 포함 가능성)</p>
-<p>&nbsp; .gemini/config.json</p>
-<p>&nbsp; ```</p>
-<p>&nbsp; 이렇게 하면 <code>config.json</code> 파일은 팀원들과 공유되지 않으며, 각자의 로컬 환경에만 유지됩니다.</p>
-<p>## 장점</p>
-<p>- **프로젝트 독립성**: 전역 설정을 건드리지 않고 각 프로젝트에 맞는 환경을 구축할 수 있습니다.</p>
-<p>- **협업 효율 증가**: <code>.gemini/config.json</code> 파일을 Git과 같은 버전 관리 시스템에 포함하면, 팀원 모두가 동일한 프로젝트 설정을 공유할 수 있습니다. (단, 위에 설명된 보안 지침을 반드시 준수하세요!)</p>
-<p>- **컨텍스트 자동 전환**: 프로젝트 폴더를 이동하는 것만으로 설정이 자동으로 바뀌므로, 수동으로 설정을 변경하는 번거로움이 사라집니다.</p>
-<p>## 마무리</p>
-<p>오늘은 제미나이 CLI의 폴더별 설정 방법에 대해 알아보았습니다. 이 작은 팁 하나가 개발 및 문서 작업의 효율을 크게 높여줄 수 있습니다. 앞으로 여러 프로젝트에서 제미나이를 활용할 때 꼭 적용해 보세요!</p>
-<p>오늘도 즐거운 코딩 하세요</p>
-<p>```</p>
+<section id="태양광-최신-정보" class="level1">
+<h1>태양광 최신 정보</h1>
+<p>최근 태양광 산업은 기술 발전, 시장 성장, 효율성 향상 및 정책 변화 등 다양한 측면에서 빠르게 진화하고 있습니다.</p>
+<p><strong>1. 최신 기술 동향</strong> * <strong>양면형 태양광 패널 (Bifacial Solar Panels)</strong>: 2025년에는 양면형 태양광 패널이 주류로 자리 잡을 것으로 예상됩니다. 이 패널은 앞면과 뒷면 모두에서 햇빛을 흡수하여 에너지 생산량을 최대 30%까지 늘릴 수 있습니다.[1] * <strong>태양광 타일 (Solar Tiles)</strong>: 기존 지붕재와 완벽하게 통합되는 세련된 대안으로 부상하고 있으며, 내구성, 효율성 및 경제성이 빠르게 향상되어 현대 주택 소유자에게 실용적인 옵션이 되고 있습니다.[1] * <strong>페로브스카이트 태양전지 (Perovskite Solar Cells)</strong>: 가볍고 유연하며 고효율을 자랑하며, 저비용 제조 공정을 통해 인쇄가 가능합니다. 연구는 상용화를 위한 안정성과 내구성 향상에 집중되고 있으며, 실리콘과의 탠덤 구조로 30%에 가까운 효율을 달성하고 있습니다.[1][2][3][4][5][6] 일본 캐논은 페로브스카이트 태양전지의 수명을 두 배로 늘리는 기술을 개발했습니다.[4] * <strong>인버터 및 시스템 효율</strong>: 현재 인버터는 98~99%의 효율을 보이며, 마이크로 인버터, 스마트 인버터, AI 기반 최대 전력점 추적(MPPT) 기술을 통해 성능이 더욱 최적화되고 있습니다.[2] * <strong>에너지 저장 시스템 (ESS)</strong>: 리튬이온 배터리 비용이 하락하고 있으며, 차세대 ESS인 전고체 배터리 및 흐름 전지(flow battery)는 장기 저장 및 안전성을 개선하고 있습니다.[2] * <strong>스마트 그리드 통합</strong>: 태양광 발전소는 스마트 그리드와 통합되어 실시간 모니터링, 예측 분석, 디지털 트윈 및 IoT 기술을 통한 효율 극대화를 추구합니다.[2] * <strong>AI 기반 O&amp;M 시스템</strong>: 인공지능(AI)을 활용한 태양광 발전소 디지털 운영 및 유지보수(O&amp;M) 시스템은 설비 이상을 사전에 감지하고 원격 모니터링을 가능하게 합니다.[7] * <strong>역송전 제어 기술</strong>: 자가소비형 태양광 설비에서 역송전이 발생하지 않도록 인버터 출력을 실시간으로 자동 조절하는 기술이 국내에서 실증되어, 발전 유지와 계통 안정성을 동시에 확보하고 있습니다.[8]</p>
+<p><strong>2. 시장 동향 (2025-2026년 전망)</strong> * <strong>글로벌 시장 성장</strong>: 전 세계 태양광 시장은 지속적으로 성장하여 2025년 신규 설치량은 695GW, 2026년에는 752GW에 이를 것으로 전망됩니다.[9] 글로벌 태양광(PV) 시장은 2026년까지 435조 원 규모로 성장할 것으로 예측됩니다.[10] * <strong>성장 동력</strong>: 주거용 태양광 시스템 보급 확대, 기술 효율 향상, 비용 절감 등이 주요 성장 요인입니다.[10] 특히 AI 데이터 센터의 전력 수요 증가가 태양광 시장 성장을 견인할 것으로 예상됩니다.[11] * <strong>아시아-태평양 지역 주도</strong>: 2026년까지 아시아-태평양 지역이 전 세계 시장 매출의 49.3%를 차지하며, 중국이 성장을 주도할 것입니다.[10][11] * <strong>국내 시장 전망</strong>: 2026년 국내 태양광 신규 설치 용량은 2025년과 유사한 약 4GW 수준을 기록할 것으로 전망됩니다.[12] 국내 태양광 시장은 노지 중심에서 영농형, 수상형, 건물일체형, 지붕형 등 다양한 형태로 다변화되고 있습니다.[13] * <strong>국내 시장의 어려움</strong>: 국내 태양광 업계는 인허가 지연, 이격거리 규제 등 행정적 제약, 낮은 수익률, 자재비 및 인건비 상승, 금융 조달의 어려움 등을 겪고 있습니다.[14]</p>
+<p><strong>3. 효율성 향상</strong> * <strong>상용 태양전지 효율</strong>: 현재 상용화된 단결정 실리콘 셀은 20~22%의 효율을 보이며, 고효율 모델은 24% 이상을 달성합니다. 연구실에서는 26~27%에 근접한 효율을 기록 중입니다.[2] * <strong>차세대 태양전지 효율</strong>: 페로브스카이트와 실리콘을 결합한 탠덤 태양전지는 연구 단계에서 30%에 가까운 효율을 보이며, 이론적 한계인 29%를 뛰어넘는 초고효율 태양전지 개발이 진행 중입니다.[2][3][5]</p>
+<p><strong>4. 국내 정책 동향</strong> * <strong>규제 개선 노력</strong>: 정부는 태양광 확산 및 보급을 위해 이격거리 규제 개선, 농지, 공장 지붕, 도로, 학교 등 유휴 부지를 활용한 태양광 발전 확대, ‘햇빛소득마을’ 조성 등을 추진하고 있습니다.[15] * <strong>영농형 태양광 제도화</strong>: 농업 활동과 태양광 발전을 병행하는 영농형 태양광을 제도권 안으로 편입하기 위한 법률안이 발의되어, 농가 소득 증대와 탄소중립 실현을 동시에 도모하고 있습니다.[16] * <strong>국내 생산 촉진</strong>: 국내 생산 촉진 세제 도입 등 친태양광 정책은 국내 태양광 제조 기업의 수익성 개선에 기여할 것으로 기대됩니다.[17] * <strong>PPA 매칭 서비스</strong>: 국내 기업의 재생에너지 조달 부담을 줄이기 위해 자가발전 태양광 리스형 사업과 FIT 종료 발전소 대상 직접 PPA(전력구매계약) 매칭 서비스가 출시되었습니다.[18] * <strong>기반 시설 확충 필요성</strong>: 태양광 보급 확대 정책 목표에도 불구하고, 계통과 같은 기반 시설 부족 및 각종 규제로 인해 실제 설치에는 어려움이 있습니다.[19]</p>
+<p>Sources: [1] dsnsolar.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwMmRIm-nUMW8ltzQSbypc1MRWd3wl1hn2Bcvr480fzKtlRNaAaGihJ0rqqnFGM1RmXdY0P5VluV-wynKf6W-Jvv5JpkO3v6V1RGbm1c4FpaqTdey3BbnY6q681cFuWzX6Ls5IBMkM_7lx_A4fxKwfBi9Lh9egV179XyP1dI8-RoawEyMmRmCBJh1D-OaqLxtEPLvTNG8=) [2] betanews.net (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpDZR-gjw_Y03a4M1DJSo3GaXWZ5VAY6qmJqyA8-altOnrXlc2Q96cpu3h5I-NeyOHQsi-Gei8XYZ3VSrKqiIlhXYbh7FfVsL23IFLahaQOhghrSrdcKIlFe9BwrrFmEU9I2IQQh10bJ-U6_vsYl4r_A==) [3] youtube.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHalncnhrmnZfJMvt5woEHtbTpbQBB9RbAwqEQOrl7w2RGuJzd2N0-6f2uY8fLxh2zvyP7wwte6P_QnH7ZtaR4cjgKVY5IxNO7jbGUtG0trCecfVeM31bJP03M7eOIyemva6-KDYtI=) [4] esgeconomy.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0G4_ZL1Os4dQ26ovFEDckrDOQnCKgr0zqsJ2ehsZ4YCcSSDWjFfE8RlrAFo1y9miQ4p_ANNAVbOQqj8bNBAs9Gf0hJwrDYNTjTyjl7lHhHQCTK3ZLVZXdr9icJTUvjSIYkofR6zfwltZ4xcaOz-k-5E1-MslM) [5] donga.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT0ctVA_A4G4DFrLVh4Q4m8dBcnba2wL7BO5vUg6p_dppoqZo-QSnPsGVPB7vIDBOipS59vOjUrRx1d6tdM8fQ7Ptd_b4LsY7Y7OI4yhIqWrTHeogcSt462ltC0gZAz05NDoSMTgDcv1egb0y1F-cdeBfybOlu_Db-zaSSiXg=) [6] youtube.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO0BhcM_NW1hLdjb93o5eOICzGqIEtHPwXYSGIRps7BqaHoaKRVZNnMH1X7zqafI9CISNK039dOsPYfTQMol87sQXROqtveTuCpXMbW1MAtYa1g91hPfgSkeTilq2kVyiJuHIiVA=) [7] solartodaymag.com (https://vertexaisearch.google.com/grounding-api-redirect/AUZIYQHIIMo8TtJRvNpKUlKricBxosqJ2zCNulzCXo8B73kbZZjeuQcD2WMs6Wl0THivF2HykNzQ_ub4h1o3ooaKATXcgK-qalssauFbB1UpMc5ykNGie5kUWTOOUf2kCjqskaKUW-QmjENK6pz72DeK_IXVFtGgyT7za5Caiw==) [8] electimes.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYQzAWsABj3b1IY2E71odsowpJur9frLtkZNtUY43G88yxDLrJyYzXemr7t5SMS7n3c4IQbH2AnC4DBF6gLcbA1HgfE3c38kHTn_6VnXNWWQIF39ZX-z3ASicuh0ivq_ZsMt7Rea_p3EpUSNKDaeCvozB3GVh0Q==) [9] kdi.re.kr (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLpnNySEt7L2FLQRvI4NkOMXtPwfQbgEYxhT3pFRWHB2usapm0zLhIUArzu9WWtwrFfcb8oH5J0ECuET4TN79L7CX2Diev2hSgRRZal0Pr7a9xyeQcylYevT4aVPfiZpoJUKgx_L18VXSyuB5zmSFO19KS7xUG) [10] aitimes.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGWKhE-IvbUUz_K8jTtJwzlQZ-P-JghZ9pQbZ2I4xK2KzX75ACBpHHgYhnMmWaxHj-l5-Duh8EHaf-yOcS5TMwgfGFY_D3k013rMUk1ySWtAgc1Aq4azBOmZZ-GrSSJRZPSEo4AWdAXKSZxW9Y9FnJ9rG2v3w==) [11] co2korea.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzBUgCiH9LDKdKBbZErJggoTFmJJwSbybHcvNNF74FRWrQmG-2ZO890BjYZr-iBZAGzV87dLF__I8qa9nC34A1Nv7ys1dFxgtnmvyo52LaOfv0QsDbIvhEKVu9179eAn3N-8kMgJj79IO5IfFIDzlhQVtTrA==) [12] industrynews.co.kr (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0zwlPjZqZk6L1adMZLt8sFZAthamA5vfNZ_RFC4jLDTzrPuMCI0aaaXXqQb90IuVOUoYeCTpllSxjv0q-segvGa483nAQG1iqHjQUbHIgtFGL28sMaAAig40EJ9AFfN7YB8b3Yha4NF_hZCxNf5bNrnUfTb3-jABumE=) [13] industrynews.co.kr (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWg5M9Bp2dqp10oSrJOQZbMHzPLWhepXrptAU3tSvTSZRB1C8uXtRDbiUlDl4vGHGREGv9EpGecoTEg8dpCcjb1CZsplbpD0ymdu3EnPeHylpEnnvIG6eVsOZHcegtE7YxEsMNjZ1dge04Ucu1HHfLn_iExqCnJC8TMPM=) [14] solartodaymag.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwIYbBGOAbdIAV-0wxx4PQEi8TaEy_95yZJNQLxPgVT6piY5Cw8WX9HPpCHgOjevAZpdNgng-xDopAfhhZeNruwidXpg9iNNDtnSUNrGhjNvdfp4gRBMnNMZUaNuhihStrWJdV0Vn_I018hVYk9Dv4OtrrWcef9mVIHg==) [15] youtube.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu15mNXeevpQDc3NYWoZ3MNF2laDoG7ysSASfOOlE7oE_VUrOnw7BpM8oM0Al2XLhGlGAC7NerjMFYaiSQMv8PIRFbWkCt36WRkfIaRXFE0Pp8ahJuMAPfo8cyuqIeYnKkepqlinc=) [16] aitimes.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXkQDsYc3grqStlomgvkv3HvlQd_yXSebVtVsH-lzyPaHv4zmKHIpWecg8ZEIJshlppYWW4UgaYyUPzW1OQyVcFErRNVS1ex9nZlf-zetyx40tsENyhwzlT4rMh3K6L4t86x97L5f5zuJTnafvwL3K0lKaipA=) [17] seoulwire.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB3mfOGKCU8buUJhoM_6JP1vf9Xaq_C8FtfY2dnWJiOhJ8nQ9Z0VBA5jbormcQr0h8Eze3ayxH6lb4nbk43VTRCgkk5spFMn4tBuhm-GPN1-UzUgozrYu2kJE7lhBE4dGfPIfBY0wiItfse0y-JTiHQ==) [18] energy-news.co.kr (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfMN6CrQFS25biKa27k7xYyjTU7O3Mzh0j3vfc3XjVlod55z4UhYfnrI3bTZc0TiDmEZmUqrXJQMTqO9tJkxSEGGQwIQKM9VR9Fdd0lyaZ9pprKyKCC4ADsmngkH1QOeqMgNz0mTxnZI7xMtOaYeOiwyWH9q8IBxM_gr8=) [19] electimes.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF50oFDCRet8H1d-8bQqItDXuzwNn3PuR_0LDu_64y7L45F9ccTyXs29xcUtaPwU0polR3FRvzxOTgpz0eHDI0sTt6Jsr_0bGsOwm2lLHPWQqZNAPDecAartH9dlnH5Qg46o4nbGzHRQfE9kcZXFFcsnFKmWt6jbw==)</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

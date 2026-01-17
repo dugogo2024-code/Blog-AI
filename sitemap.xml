@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-website-url.example.com/posts/welcome/index.html</loc>
-    <lastmod>2026-01-17T01:28:20.163Z</lastmod>
-  </url>
-  <url>
-    <loc>https://your-website-url.example.com/posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html</loc>
-    <lastmod>2026-01-17T02:14:40.022Z</lastmod>
-  </url>
-  <url>
     <loc>https://your-website-url.example.com/about.html</loc>
-    <lastmod>2026-01-17T01:28:20.158Z</lastmod>
+    <lastmod>2026-01-17T08:39:40.966Z</lastmod>
   </url>
   <url>
-    <loc>https://your-website-url.example.com/index.html</loc>
-    <lastmod>2026-01-17T01:28:20.159Z</lastmod>
+    <loc>https://your-website-url.example.com/posts/welcome/index.html</loc>
+    <lastmod>2026-01-17T08:39:40.967Z</lastmod>
   </url>
   <url>
     <loc>https://your-website-url.example.com/posts/post-with-code/index.html</loc>
-    <lastmod>2026-01-17T01:28:20.162Z</lastmod>
+    <lastmod>2026-01-17T08:39:40.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://your-website-url.example.com/PRD.html</loc>
+    <lastmod>2026-01-17T08:39:40.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://your-website-url.example.com/index.html</loc>
+    <lastmod>2026-01-17T08:39:40.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://your-website-url.example.com/posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html</loc>
+    <lastmod>2026-01-17T08:39:40.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://your-website-url.example.com/posts/2026-01-17-solar-power-trends/index.html</loc>
+    <lastmod>2026-01-17T08:39:40.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://your-website-url.example.com/search.html</loc>
+    <lastmod>2026-01-17T08:39:40.967Z</lastmod>
   </url>
 </urlset>

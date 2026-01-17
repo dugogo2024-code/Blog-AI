@@ -1,10 +1,87 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "PRD.html",
+    "href": "PRD.html",
+    "title": "블로그 포스트 자동화 시스템 PRD (Product Requirements Document)",
+    "section": "",
+    "text": "키워드 입력만으로 관련 정보를 수집하고, 이를 바탕으로 블로그 포스트 초안을 작성하며, 최종적으로 Quarto를 사용하여 GitHub Pages에 게시하는 전 과정을 자동화하는 시스템을 구축합니다. 이 시스템은 콘텐츠 제작 프로세스의 효율성을 극대화하는 것을 목표로 합니다.\n\n\n\n\n시간 절약: 정보 검색, 초안 작성, 게시 등 반복적인 작업을 자동화하여 콘텐츠 제작에 소요되는 시간을 대폭 단축합니다.\n콘텐츠 품질 향상: 최신 정보를 신속하게 수집하고, 생성형 AI를 활용하여 콘텐츠의 질을 높입니다.\n효율적인 워크플로우: 개발자와 콘텐츠 제작자가 최소한의 개입으로 블로그 포스트를 발행할 수 있는 간결하고 효율적인 워크플로우를 제공합니다.\n\n\n\n\n\n블로거 및 콘텐츠 제작자: 기술 블로그, 뉴스, 리뷰 등 다양한 주제의 콘텐츠를 정기적으로 발행하는 개인 또는 팀\n개발자: 문서 작성 및 공유 과정을 자동화하고자 하는 개발자\n\n\n\n\n\n\n\n입력: 사용자가 제공하는 특정 키워드\n프로세스:\n\nGoogle 검색 API를 활용하여 키워드와 관련된 최신 웹 문서, 뉴스, 기사 등을 수집합니다.\n수집된 정보의 핵심 내용을 요약하고 정리합니다.\n\n출력:\n\nsearch.md: 수집 및 요약된 정보가 저장된 마크다운 파일\n\n\n\n\n\n\n입력: 블로그 포스트의 주제 또는 핵심 키워드\n프로세스:\n\nGemini 이미지 생성 API에 키워드를 전달하여 블로그 포스트의 대표 이미지 생성을 요청합니다.\n생성된 이미지를 지정된 형식과 크기로 다운로드합니다.\n\n출력:\n\nimage.jpg: 블로그 포스트에 사용될 이미지 파일\n\n\n\n\n\n\n입력:\n\nsearch.md (수집된 정보)\nimage.jpg (생성된 이미지)\n\n프로세스:\n\nsearch.md의 내용을 기반으로 서론, 본론, 결론 구조를 갖춘 블로그 포스트 초안을 생성합니다.\n생성된 image.jpg를 포스트의 적절한 위치(예: 상단)에 삽입하는 마크다운 구문을 포함합니다.\nQuarto 형식에 맞는 메타데이터(제목, 작성자, 날짜 등)를 자동으로 추가합니다.\n\n출력:\n\ndraft.md: 완전한 형태의 블로그 포스트 마크다운 초안\n\n\n\n\n\n\n입력: draft.md\n프로세스:\n\n지정된 디렉토리(예: posts/YYYY-MM-DD-post-title/)를 생성합니다.\ndraft.md 파일의 이름을 index.qmd로 변경하고, image.jpg와 함께 해당 디렉토리로 이동시킵니다.\nQuarto CLI를 실행하여 index.qmd 파일을 HTML로 렌더링합니다. (quarto render)\n생성된 _site 디렉토리의 내용을 GitHub 리포지토리의 gh-pages 브랜치 또는 메인 브랜치의 /docs 폴더에 푸시하여 GitHub Pages에 게시합니다.\n\n출력:\n\nposts/YYYY-MM-DD-post-title/index.html: 최종적으로 웹에 게시될 HTML 파일\n업데이트된 GitHub Pages 사이트\n\n\n\n\n\n\n\n정보 수집: Google Custom Search API\n이미지 생성: Google Gemini API (Image Generation)\n초안 작성: Google Gemini API (Text Generation)\n게시: Quarto, Git, GitHub Actions\n스크립트: Python 또는 Shell Script\n\n\n\n\n\n실행: 사용자가 메인 스크립트를 실행하며 ’키워드’를 인자로 전달합니다.\n\n예: python run.py \"제미나이 API 최신 업데이트\"\n\n정보 수집: 스크립트가 Google 검색으로 “제미나이 API 최신 업데이트” 관련 정보를 수집하여 search.md에 저장합니다.\n이미지 생성: 스크립트가 Gemini API로 관련 이미지를 생성하여 image.jpg로 저장합니다.\n초안 작성: 스크립트가 search.md와 image.jpg를 조합하여 draft.md를 생성합니다.\n게시:\n\nposts/2026-01-17-gemini-api-update와 같은 디렉토리를 생성합니다.\ndraft.md는 index.qmd로, image.jpg는 그대로 새 디렉토리로 이동됩니다.\nGitHub Actions 또는 로컬 스크립트가 quarto render 명령을 실행합니다.\n변경 사항이 GitHub 리포지토리에 푸시되고, 잠시 후 GitHub Pages에 새로운 글이 게시됩니다.\n\n\n\n\n\n\nPRD.md: 본 문서\nsearch.md: 키워드 검색 결과\nimage.jpg: 생성된 대표 이미지\ndraft.md: 블로그 포스트 초안\nposts/{post-name}/index.html: 최종 게시물 HTML 파일"
+  },
+  {
+    "objectID": "PRD.html#개요",
+    "href": "PRD.html#개요",
+    "title": "블로그 포스트 자동화 시스템 PRD (Product Requirements Document)",
+    "section": "",
+    "text": "키워드 입력만으로 관련 정보를 수집하고, 이를 바탕으로 블로그 포스트 초안을 작성하며, 최종적으로 Quarto를 사용하여 GitHub Pages에 게시하는 전 과정을 자동화하는 시스템을 구축합니다. 이 시스템은 콘텐츠 제작 프로세스의 효율성을 극대화하는 것을 목표로 합니다."
+  },
+  {
+    "objectID": "PRD.html#목표",
+    "href": "PRD.html#목표",
+    "title": "블로그 포스트 자동화 시스템 PRD (Product Requirements Document)",
+    "section": "",
+    "text": "시간 절약: 정보 검색, 초안 작성, 게시 등 반복적인 작업을 자동화하여 콘텐츠 제작에 소요되는 시간을 대폭 단축합니다.\n콘텐츠 품질 향상: 최신 정보를 신속하게 수집하고, 생성형 AI를 활용하여 콘텐츠의 질을 높입니다.\n효율적인 워크플로우: 개발자와 콘텐츠 제작자가 최소한의 개입으로 블로그 포스트를 발행할 수 있는 간결하고 효율적인 워크플로우를 제공합니다."
+  },
+  {
+    "objectID": "PRD.html#사용자",
+    "href": "PRD.html#사용자",
+    "title": "블로그 포스트 자동화 시스템 PRD (Product Requirements Document)",
+    "section": "",
+    "text": "블로거 및 콘텐츠 제작자: 기술 블로그, 뉴스, 리뷰 등 다양한 주제의 콘텐츠를 정기적으로 발행하는 개인 또는 팀\n개발자: 문서 작성 및 공유 과정을 자동화하고자 하는 개발자"
+  },
+  {
+    "objectID": "PRD.html#기능-명세",
+    "href": "PRD.html#기능-명세",
+    "title": "블로그 포스트 자동화 시스템 PRD (Product Requirements Document)",
+    "section": "",
+    "text": "입력: 사용자가 제공하는 특정 키워드\n프로세스:\n\nGoogle 검색 API를 활용하여 키워드와 관련된 최신 웹 문서, 뉴스, 기사 등을 수집합니다.\n수집된 정보의 핵심 내용을 요약하고 정리합니다.\n\n출력:\n\nsearch.md: 수집 및 요약된 정보가 저장된 마크다운 파일\n\n\n\n\n\n\n입력: 블로그 포스트의 주제 또는 핵심 키워드\n프로세스:\n\nGemini 이미지 생성 API에 키워드를 전달하여 블로그 포스트의 대표 이미지 생성을 요청합니다.\n생성된 이미지를 지정된 형식과 크기로 다운로드합니다.\n\n출력:\n\nimage.jpg: 블로그 포스트에 사용될 이미지 파일\n\n\n\n\n\n\n입력:\n\nsearch.md (수집된 정보)\nimage.jpg (생성된 이미지)\n\n프로세스:\n\nsearch.md의 내용을 기반으로 서론, 본론, 결론 구조를 갖춘 블로그 포스트 초안을 생성합니다.\n생성된 image.jpg를 포스트의 적절한 위치(예: 상단)에 삽입하는 마크다운 구문을 포함합니다.\nQuarto 형식에 맞는 메타데이터(제목, 작성자, 날짜 등)를 자동으로 추가합니다.\n\n출력:\n\ndraft.md: 완전한 형태의 블로그 포스트 마크다운 초안\n\n\n\n\n\n\n입력: draft.md\n프로세스:\n\n지정된 디렉토리(예: posts/YYYY-MM-DD-post-title/)를 생성합니다.\ndraft.md 파일의 이름을 index.qmd로 변경하고, image.jpg와 함께 해당 디렉토리로 이동시킵니다.\nQuarto CLI를 실행하여 index.qmd 파일을 HTML로 렌더링합니다. (quarto render)\n생성된 _site 디렉토리의 내용을 GitHub 리포지토리의 gh-pages 브랜치 또는 메인 브랜치의 /docs 폴더에 푸시하여 GitHub Pages에 게시합니다.\n\n출력:\n\nposts/YYYY-MM-DD-post-title/index.html: 최종적으로 웹에 게시될 HTML 파일\n업데이트된 GitHub Pages 사이트"
+  },
+  {
+    "objectID": "PRD.html#기술-스택-제안",
+    "href": "PRD.html#기술-스택-제안",
+    "title": "블로그 포스트 자동화 시스템 PRD (Product Requirements Document)",
+    "section": "",
+    "text": "정보 수집: Google Custom Search API\n이미지 생성: Google Gemini API (Image Generation)\n초안 작성: Google Gemini API (Text Generation)\n게시: Quarto, Git, GitHub Actions\n스크립트: Python 또는 Shell Script"
+  },
+  {
+    "objectID": "PRD.html#전체-작업-흐름",
+    "href": "PRD.html#전체-작업-흐름",
+    "title": "블로그 포스트 자동화 시스템 PRD (Product Requirements Document)",
+    "section": "",
+    "text": "실행: 사용자가 메인 스크립트를 실행하며 ’키워드’를 인자로 전달합니다.\n\n예: python run.py \"제미나이 API 최신 업데이트\"\n\n정보 수집: 스크립트가 Google 검색으로 “제미나이 API 최신 업데이트” 관련 정보를 수집하여 search.md에 저장합니다.\n이미지 생성: 스크립트가 Gemini API로 관련 이미지를 생성하여 image.jpg로 저장합니다.\n초안 작성: 스크립트가 search.md와 image.jpg를 조합하여 draft.md를 생성합니다.\n게시:\n\nposts/2026-01-17-gemini-api-update와 같은 디렉토리를 생성합니다.\ndraft.md는 index.qmd로, image.jpg는 그대로 새 디렉토리로 이동됩니다.\nGitHub Actions 또는 로컬 스크립트가 quarto render 명령을 실행합니다.\n변경 사항이 GitHub 리포지토리에 푸시되고, 잠시 후 GitHub Pages에 새로운 글이 게시됩니다."
+  },
+  {
+    "objectID": "PRD.html#산출물",
+    "href": "PRD.html#산출물",
+    "title": "블로그 포스트 자동화 시스템 PRD (Product Requirements Document)",
+    "section": "",
+    "text": "PRD.md: 본 문서\nsearch.md: 키워드 검색 결과\nimage.jpg: 생성된 대표 이미지\ndraft.md: 블로그 포스트 초안\nposts/{post-name}/index.html: 최종 게시물 HTML 파일"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "blog",
+    "section": "",
+    "text": "제미나이 CLI 폴더별 설정 방법\n\n\n\nGemini\n\nCLI\n\nTutorial\n\n\n\n\n\n\n\n\n\nJan 17, 2026\n\n\n김영훈\n\n\n\n\n\n\n\n\n\n\n\n\n태양광 에너지의 최신 동향과 전망\n\n\n\ntechnology\n\nenergy\n\n\n\n\n\n\n\n\n\nJan 17, 2026\n\n\nGemini\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 15, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 12, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2026-01-17-제미나이-CLI-폴더별-설정-방법.html",
@@ -14,24 +91,38 @@
     "text": "# 제미나이 CLI, 폴더(프로젝트)별로 설정하는 방법\n제미나이(Gemini) CLI를 사용하다 보면, 각 프로젝트의 성격에 따라 다른 설정을 적용하고 싶을 때가 있습니다. 예를 들어, 어떤 프로젝트는 gemini-1.5-pro 모델을 사용하고, 다른 프로젝트는 빠른 응답이 중요한 gemini-1.5-flash 모델을 사용하고 싶을 수 있죠.\n매번 gemini config set 명령어로 설정을 바꾸는 것은 번거롭습니다. 다행히 제미나이 CLI는 **폴더별로 설정을 다르게 적용**할 수 있는 편리한 기능을 제공합니다. 오늘 배운 내용을 정리해 보겠습니다.\n## 폴더별 설정은 어떻게 적용되나요?\n제미나이 CLI는 명령어를 실행하는 현재 폴더부터 시작해서 상위 폴더로 거슬러 올라가며 .gemini/config.json 파일을 찾습니다. 가장 먼저 발견되는 설정 파일을 사용하고, 만약 최상위 폴더까지 파일을 찾지 못하면 전역(global) 설정을 따르게 됩니다.\n이러한 원리 덕분에 우리는 각 프로젝트 폴더에 자신만의 config.json을 만들어 독립적인 설정을 유지할 수 있습니다.\n## 설정 방법\n방법은 아주 간단합니다.\n**1. 프로젝트 루트에 .gemini 폴더 생성**\n설정을 적용하고 싶은 프로젝트의 최상위 폴더(루트)로 이동하여 .gemini라는 이름의 폴더를 만듭니다.\n\nmkdir .gemini\n**2. .gemini 폴더 내에 config.json 파일 생성**\n방금 만든 .gemini 폴더 안에 config.json이라는 파일을 생성합니다.\n**3. config.json 파일에 원하는 설정 추가**\n이제 config.json 파일을 열어 해당 프로젝트에서만 사용하고 싶은 설정을 JSON 형식으로 추가합니다.\n## 예시: 프로젝트별로 다른 모델 사용하기\n예를 들어, 두 개의 다른 프로젝트가 있다고 가정해 보겠습니다.\n- project-A : 고품질의 결과물이 중요한 웹 개발 프로젝트\n- project-B : 빠른 아이디어 스케치가 중요한 블로그 초안 작성 프로젝트\n**project-A 설정**\nproject-A 폴더의 .gemini/config.json 파일에는 gemini-1.5-pro 모델을 사용하도록 설정합니다.\n./project-A/.gemini/config.json\n\n{\n\n&nbsp; \"model\": \"gemini-1.5-pro\"\n\n}\n**project-B 설정**\nproject-B 폴더의 .gemini/config.json 파일에는 gemini-1.5-flash 모델을 사용하도록 설정합니다.\n./project-B/.gemini/config.json\n\n{\n\n&nbsp; \"model\": \"gemini-1.5-flash\"\n\n}\n두 모델의 차이점이 궁금하신가요? 아래 표를 통해 각 모델의 특징과 권장 사용 사례를 확인해 보세요.\n구분 | Gemini 1.5 Pro | Gemini 1.5 Flash |\n:— | :— | :— |\n**주요 특징** | 높은 정확도와 성능, 복잡한 추론 작업에 최적화 | 빠르고 비용 효율적인 작업에 최적화 |\n**주요 사용 사례** | 심층 분석, 복잡한 코드 생성, 고품질 콘텐츠 작성 | 빠른 요약, 챗봇, 캡션 생성, 간단한 자동화 |\n**처리 속도** | 상대적으로 느림 | 매우 빠름 |\n**비용** | 상대적으로 높음 | 상대적으로 낮음 |\n**컨텍스트 창** | 최대 100만 토큰 | 최대 100만 토큰 |\n이처럼 각 모델의 장단점을 파악하면, 프로젝트의 목표에 가장 적합한 모델을 선택하여 비용과 효율을 모두 최적화할 수 있습니다.\n## ⚠️ 중요: API 키 보안 및 .gitignore 설정\n프로젝트별 설정을 사용하면 매우 편리하지만, 한 가지 주의해야 할 점이 있습니다. 바로 **API 키와 같은 민감한 정보를 다루는 방법**입니다.\n만약 config.json 파일에 API 키를 직접 추가하고 이 파일을 Git 저장소에 커밋하면, API 키가 외부에 노출되어 보안 문제가 발생할 수 있습니다.\n### 권장하는 방법\n1. **API 키는 전역(Global) 설정에만 보관하세요.**\n  - API 키는 gemini config set api\\_key YOUR\\_API\\_KEY 명령어를 통해 한 번만 설정하면, 홈 디렉터리의 전역 설정 파일(~/.gemini/config.json 또는 C:\\\\Users\\\\사용자명\\\\.gemini\\\\config.json)에 안전하게 저장됩니다.\n  - 프로젝트별 config.json에는 모델이나 다른 안전한 설정만 지정하세요. 제미나이 CLI는 프로젝트 설정에 API 키가 없으면 자동으로 전역 설정에서 가져와 사용합니다.\n2. **실수로 민감한 정보를 커밋하지 않도록 .gitignore를 사용하세요.**\n  - 만약 프로젝트별 config.json에 민감한 정보를 포함해야만 하는 특별한 경우가 있다면, 해당 파일이 Git 추적에서 제외되도록 반드시 .gitignore 파일에 추가해야 합니다.\n  - 프로젝트 루트 폴더에 .gitignore 파일을 만들고 아래 내용을 추가하세요.\n  ```gitignore\n  # 제미나이 CLI 설정 파일 (민감 정보 포함 가능성)\n  .gemini/config.json\n  ```\n  이렇게 하면 config.json 파일은 팀원들과 공유되지 않으며, 각자의 로컬 환경에만 유지됩니다.\n## 장점\n- **프로젝트 독립성**: 전역 설정을 건드리지 않고 각 프로젝트에 맞는 환경을 구축할 수 있습니다.\n- **협업 효율 증가**: .gemini/config.json 파일을 Git과 같은 버전 관리 시스템에 포함하면, 팀원 모두가 동일한 프로젝트 설정을 공유할 수 있습니다. (단, 위에 설명된 보안 지침을 반드시 준수하세요!)\n- **컨텍스트 자동 전환**: 프로젝트 폴더를 이동하는 것만으로 설정이 자동으로 바뀌므로, 수동으로 설정을 변경하는 번거로움이 사라집니다.\n## 마무리\n오늘은 제미나이 CLI의 폴더별 설정 방법에 대해 알아보았습니다. 이 작은 팁 하나가 개발 및 문서 작업의 효율을 크게 높여줄 수 있습니다. 앞으로 여러 프로젝트에서 제미나이를 활용할 때 꼭 적용해 보세요!\n오늘도 즐거운 코딩 하세요\n```"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/2026-01-17-solar-power-trends/index.html",
+    "href": "posts/2026-01-17-solar-power-trends/index.html",
+    "title": "태양광 에너지의 최신 동향과 전망",
     "section": "",
-    "text": "About this blog"
+    "text": "최근 전 세계적으로 기후 변화 대응과 지속 가능한 에너지원에 대한 관심이 높아지면서 태양광 에너지가 핵심적인 해결책으로 떠오르고 있습니다. 기술의 발전과 시장의 성장이 맞물려 태양광 산업은 그 어느 때보다 역동적인 변화를 겪고 있습니다. 이 글에서는 태양광 에너지의 최신 기술 동향, 시장 전망, 그리고 국내외 정책 방향에 대해 심도 있게 살펴보겠습니다.\n\n\n\n태양광 이미지"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "blog",
+    "objectID": "posts/2026-01-17-solar-power-trends/index.html#서론",
+    "href": "posts/2026-01-17-solar-power-trends/index.html#서론",
+    "title": "태양광 에너지의 최신 동향과 전망",
     "section": "",
-    "text": "제미나이 CLI 폴더별 설정 방법\n\n\n\nGemini\n\nCLI\n\nTutorial\n\n\n\n\n\n\n\n\n\nJan 17, 2026\n\n\n김영훈\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 15, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 12, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "최근 전 세계적으로 기후 변화 대응과 지속 가능한 에너지원에 대한 관심이 높아지면서 태양광 에너지가 핵심적인 해결책으로 떠오르고 있습니다. 기술의 발전과 시장의 성장이 맞물려 태양광 산업은 그 어느 때보다 역동적인 변화를 겪고 있습니다. 이 글에서는 태양광 에너지의 최신 기술 동향, 시장 전망, 그리고 국내외 정책 방향에 대해 심도 있게 살펴보겠습니다.\n\n\n\n태양광 이미지"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/2026-01-17-solar-power-trends/index.html#본론",
+    "href": "posts/2026-01-17-solar-power-trends/index.html#본론",
+    "title": "태양광 에너지의 최신 동향과 전망",
+    "section": "본론",
+    "text": "본론\n\n1. 혁신을 거듭하는 태양광 기술\n태양광 기술은 효율성 향상과 적용 범위 확대를 목표로 끊임없이 진화하고 있습니다. 2025년 주류로 예상되는 양면형 태양광 패널은 앞면과 뒷면 모두에서 빛을 흡수해 발전량을 극대화하며, 심미성을 강조한 태양광 타일은 건물 일체형 태양광(BIPV) 시장의 성장을 이끌고 있습니다.\n특히 주목받는 것은 페로브스카이트 태양전지입니다. 가볍고 유연하며, 저비용으로 높은 효율을 낼 수 있어 차세대 태양전지 기술의 선두주자로 꼽힙니다. 또한, AI 기술이 접목된 스마트 인버터, 에너지 저장 시스템(ESS)과의 연계, 그리고 AI 기반의 운영 및 유지보수(O&M) 시스템은 태양광 발전의 효율성과 안정성을 한 차원 높이고 있습니다.\n\n\n2. 글로벌 및 국내 시장 동향\n전 세계 태양광 시장은 폭발적인 성장을 이어가고 있습니다. 2026년에는 신규 설치량이 752GW에 달하고, 전체 시장 규모는 435조 원에 이를 것으로 전망됩니다. 이러한 성장의 배경에는 주거용 태양광 보급 확대와 더불어, AI 데이터 센터와 같이 막대한 전력을 필요로 하는 새로운 수요처의 등장이 있습니다.\n국내 시장 또한 영농형, 수상형, 건물일체형 등 다양한 형태로 다변화를 꾀하며 성장을 모색하고 있습니다. 하지만 인허가 지연, 이격거리 규제와 같은 행정적 제약과 금융 조달의 어려움은 해결해야 할 과제로 남아있습니다.\n\n\n3. 미래를 여는 정책 방향\n각국 정부는 태양광 에너지 보급을 확대하기 위해 적극적인 정책을 펼치고 있습니다. 국내에서도 규제 개선, 유휴 부지 활용, 영농형 태양광 제도화 등을 통해 태양광 발전을 장려하고 있습니다. 특히, 국내 생산을 촉진하기 위한 세제 혜택과 기업의 재생에너지 사용을 돕는 전력구매계약(PPA) 매칭 서비스 등은 국내 산업 생태계에 긍정적인 영향을 미칠 것으로 기대됩니다."
+  },
+  {
+    "objectID": "posts/2026-01-17-solar-power-trends/index.html#결론",
+    "href": "posts/2026-01-17-solar-power-trends/index.html#결론",
+    "title": "태양광 에너지의 최신 동향과 전망",
+    "section": "결론",
+    "text": "결론\n태양광 에너지는 이제 선택이 아닌 필수 에너지원으로 자리매김하고 있습니다. 페로브스카이트와 같은 혁신적인 기술의 발전, AI와의 융합, 그리고 정부의 적극적인 지원 정책에 힘입어 태양광 산업은 앞으로도 지속적인 성장을 거듭할 것입니다. 물론 규제 합리화, 기반 시설 확충 등 해결해야 할 과제들도 남아있지만, 태양광이 열어갈 지속 가능한 미래는 매우 밝다고 할 수 있습니다.\n\n이 포스트는 Google 검색 결과를 바탕으로 Gemini가 작성한 초안입니다."
+  },
+  {
+    "objectID": "search.html",
+    "href": "search.html",
+    "title": "태양광 최신 정보",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "태양광 최신 정보\n최근 태양광 산업은 기술 발전, 시장 성장, 효율성 향상 및 정책 변화 등 다양한 측면에서 빠르게 진화하고 있습니다.\n1. 최신 기술 동향 * 양면형 태양광 패널 (Bifacial Solar Panels): 2025년에는 양면형 태양광 패널이 주류로 자리 잡을 것으로 예상됩니다. 이 패널은 앞면과 뒷면 모두에서 햇빛을 흡수하여 에너지 생산량을 최대 30%까지 늘릴 수 있습니다.[1] * 태양광 타일 (Solar Tiles): 기존 지붕재와 완벽하게 통합되는 세련된 대안으로 부상하고 있으며, 내구성, 효율성 및 경제성이 빠르게 향상되어 현대 주택 소유자에게 실용적인 옵션이 되고 있습니다.[1] * 페로브스카이트 태양전지 (Perovskite Solar Cells): 가볍고 유연하며 고효율을 자랑하며, 저비용 제조 공정을 통해 인쇄가 가능합니다. 연구는 상용화를 위한 안정성과 내구성 향상에 집중되고 있으며, 실리콘과의 탠덤 구조로 30%에 가까운 효율을 달성하고 있습니다.[1][2][3][4][5][6] 일본 캐논은 페로브스카이트 태양전지의 수명을 두 배로 늘리는 기술을 개발했습니다.[4] * 인버터 및 시스템 효율: 현재 인버터는 98~99%의 효율을 보이며, 마이크로 인버터, 스마트 인버터, AI 기반 최대 전력점 추적(MPPT) 기술을 통해 성능이 더욱 최적화되고 있습니다.[2] * 에너지 저장 시스템 (ESS): 리튬이온 배터리 비용이 하락하고 있으며, 차세대 ESS인 전고체 배터리 및 흐름 전지(flow battery)는 장기 저장 및 안전성을 개선하고 있습니다.[2] * 스마트 그리드 통합: 태양광 발전소는 스마트 그리드와 통합되어 실시간 모니터링, 예측 분석, 디지털 트윈 및 IoT 기술을 통한 효율 극대화를 추구합니다.[2] * AI 기반 O&M 시스템: 인공지능(AI)을 활용한 태양광 발전소 디지털 운영 및 유지보수(O&M) 시스템은 설비 이상을 사전에 감지하고 원격 모니터링을 가능하게 합니다.[7] * 역송전 제어 기술: 자가소비형 태양광 설비에서 역송전이 발생하지 않도록 인버터 출력을 실시간으로 자동 조절하는 기술이 국내에서 실증되어, 발전 유지와 계통 안정성을 동시에 확보하고 있습니다.[8]\n2. 시장 동향 (2025-2026년 전망) * 글로벌 시장 성장: 전 세계 태양광 시장은 지속적으로 성장하여 2025년 신규 설치량은 695GW, 2026년에는 752GW에 이를 것으로 전망됩니다.[9] 글로벌 태양광(PV) 시장은 2026년까지 435조 원 규모로 성장할 것으로 예측됩니다.[10] * 성장 동력: 주거용 태양광 시스템 보급 확대, 기술 효율 향상, 비용 절감 등이 주요 성장 요인입니다.[10] 특히 AI 데이터 센터의 전력 수요 증가가 태양광 시장 성장을 견인할 것으로 예상됩니다.[11] * 아시아-태평양 지역 주도: 2026년까지 아시아-태평양 지역이 전 세계 시장 매출의 49.3%를 차지하며, 중국이 성장을 주도할 것입니다.[10][11] * 국내 시장 전망: 2026년 국내 태양광 신규 설치 용량은 2025년과 유사한 약 4GW 수준을 기록할 것으로 전망됩니다.[12] 국내 태양광 시장은 노지 중심에서 영농형, 수상형, 건물일체형, 지붕형 등 다양한 형태로 다변화되고 있습니다.[13] * 국내 시장의 어려움: 국내 태양광 업계는 인허가 지연, 이격거리 규제 등 행정적 제약, 낮은 수익률, 자재비 및 인건비 상승, 금융 조달의 어려움 등을 겪고 있습니다.[14]\n3. 효율성 향상 * 상용 태양전지 효율: 현재 상용화된 단결정 실리콘 셀은 20~22%의 효율을 보이며, 고효율 모델은 24% 이상을 달성합니다. 연구실에서는 26~27%에 근접한 효율을 기록 중입니다.[2] * 차세대 태양전지 효율: 페로브스카이트와 실리콘을 결합한 탠덤 태양전지는 연구 단계에서 30%에 가까운 효율을 보이며, 이론적 한계인 29%를 뛰어넘는 초고효율 태양전지 개발이 진행 중입니다.[2][3][5]\n4. 국내 정책 동향 * 규제 개선 노력: 정부는 태양광 확산 및 보급을 위해 이격거리 규제 개선, 농지, 공장 지붕, 도로, 학교 등 유휴 부지를 활용한 태양광 발전 확대, ‘햇빛소득마을’ 조성 등을 추진하고 있습니다.[15] * 영농형 태양광 제도화: 농업 활동과 태양광 발전을 병행하는 영농형 태양광을 제도권 안으로 편입하기 위한 법률안이 발의되어, 농가 소득 증대와 탄소중립 실현을 동시에 도모하고 있습니다.[16] * 국내 생산 촉진: 국내 생산 촉진 세제 도입 등 친태양광 정책은 국내 태양광 제조 기업의 수익성 개선에 기여할 것으로 기대됩니다.[17] * PPA 매칭 서비스: 국내 기업의 재생에너지 조달 부담을 줄이기 위해 자가발전 태양광 리스형 사업과 FIT 종료 발전소 대상 직접 PPA(전력구매계약) 매칭 서비스가 출시되었습니다.[18] * 기반 시설 확충 필요성: 태양광 보급 확대 정책 목표에도 불구하고, 계통과 같은 기반 시설 부족 및 각종 규제로 인해 실제 설치에는 어려움이 있습니다.[19]\nSources: [1] dsnsolar.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwMmRIm-nUMW8ltzQSbypc1MRWd3wl1hn2Bcvr480fzKtlRNaAaGihJ0rqqnFGM1RmXdY0P5VluV-wynKf6W-Jvv5JpkO3v6V1RGbm1c4FpaqTdey3BbnY6q681cFuWzX6Ls5IBMkM_7lx_A4fxKwfBi9Lh9egV179XyP1dI8-RoawEyMmRmCBJh1D-OaqLxtEPLvTNG8=) [2] betanews.net (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpDZR-gjw_Y03a4M1DJSo3GaXWZ5VAY6qmJqyA8-altOnrXlc2Q96cpu3h5I-NeyOHQsi-Gei8XYZ3VSrKqiIlhXYbh7FfVsL23IFLahaQOhghrSrdcKIlFe9BwrrFmEU9I2IQQh10bJ-U6_vsYl4r_A==) [3] youtube.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHalncnhrmnZfJMvt5woEHtbTpbQBB9RbAwqEQOrl7w2RGuJzd2N0-6f2uY8fLxh2zvyP7wwte6P_QnH7ZtaR4cjgKVY5IxNO7jbGUtG0trCecfVeM31bJP03M7eOIyemva6-KDYtI=) [4] esgeconomy.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0G4_ZL1Os4dQ26ovFEDckrDOQnCKgr0zqsJ2ehsZ4YCcSSDWjFfE8RlrAFo1y9miQ4p_ANNAVbOQqj8bNBAs9Gf0hJwrDYNTjTyjl7lHhHQCTK3ZLVZXdr9icJTUvjSIYkofR6zfwltZ4xcaOz-k-5E1-MslM) [5] donga.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT0ctVA_A4G4DFrLVh4Q4m8dBcnba2wL7BO5vUg6p_dppoqZo-QSnPsGVPB7vIDBOipS59vOjUrRx1d6tdM8fQ7Ptd_b4LsY7Y7OI4yhIqWrTHeogcSt462ltC0gZAz05NDoSMTgDcv1egb0y1F-cdeBfybOlu_Db-zaSSiXg=) [6] youtube.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO0BhcM_NW1hLdjb93o5eOICzGqIEtHPwXYSGIRps7BqaHoaKRVZNnMH1X7zqafI9CISNK039dOsPYfTQMol87sQXROqtveTuCpXMbW1MAtYa1g91hPfgSkeTilq2kVyiJuHIiVA=) [7] solartodaymag.com (https://vertexaisearch.google.com/grounding-api-redirect/AUZIYQHIIMo8TtJRvNpKUlKricBxosqJ2zCNulzCXo8B73kbZZjeuQcD2WMs6Wl0THivF2HykNzQ_ub4h1o3ooaKATXcgK-qalssauFbB1UpMc5ykNGie5kUWTOOUf2kCjqskaKUW-QmjENK6pz72DeK_IXVFtGgyT7za5Caiw==) [8] electimes.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYQzAWsABj3b1IY2E71odsowpJur9frLtkZNtUY43G88yxDLrJyYzXemr7t5SMS7n3c4IQbH2AnC4DBF6gLcbA1HgfE3c38kHTn_6VnXNWWQIF39ZX-z3ASicuh0ivq_ZsMt7Rea_p3EpUSNKDaeCvozB3GVh0Q==) [9] kdi.re.kr (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLpnNySEt7L2FLQRvI4NkOMXtPwfQbgEYxhT3pFRWHB2usapm0zLhIUArzu9WWtwrFfcb8oH5J0ECuET4TN79L7CX2Diev2hSgRRZal0Pr7a9xyeQcylYevT4aVPfiZpoJUKgx_L18VXSyuB5zmSFO19KS7xUG) [10] aitimes.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGWKhE-IvbUUz_K8jTtJwzlQZ-P-JghZ9pQbZ2I4xK2KzX75ACBpHHgYhnMmWaxHj-l5-Duh8EHaf-yOcS5TMwgfGFY_D3k013rMUk1ySWtAgc1Aq4azBOmZZ-GrSSJRZPSEo4AWdAXKSZxW9Y9FnJ9rG2v3w==) [11] co2korea.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzBUgCiH9LDKdKBbZErJggoTFmJJwSbybHcvNNF74FRWrQmG-2ZO890BjYZr-iBZAGzV87dLF__I8qa9nC34A1Nv7ys1dFxgtnmvyo52LaOfv0QsDbIvhEKVu9179eAn3N-8kMgJj79IO5IfFIDzlhQVtTrA==) [12] industrynews.co.kr (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0zwlPjZqZk6L1adMZLt8sFZAthamA5vfNZ_RFC4jLDTzrPuMCI0aaaXXqQb90IuVOUoYeCTpllSxjv0q-segvGa483nAQG1iqHjQUbHIgtFGL28sMaAAig40EJ9AFfN7YB8b3Yha4NF_hZCxNf5bNrnUfTb3-jABumE=) [13] industrynews.co.kr (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWg5M9Bp2dqp10oSrJOQZbMHzPLWhepXrptAU3tSvTSZRB1C8uXtRDbiUlDl4vGHGREGv9EpGecoTEg8dpCcjb1CZsplbpD0ymdu3EnPeHylpEnnvIG6eVsOZHcegtE7YxEsMNjZ1dge04Ucu1HHfLn_iExqCnJC8TMPM=) [14] solartodaymag.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwIYbBGOAbdIAV-0wxx4PQEi8TaEy_95yZJNQLxPgVT6piY5Cw8WX9HPpCHgOjevAZpdNgng-xDopAfhhZeNruwidXpg9iNNDtnSUNrGhjNvdfp4gRBMnNMZUaNuhihStrWJdV0Vn_I018hVYk9Dv4OtrrWcef9mVIHg==) [15] youtube.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu15mNXeevpQDc3NYWoZ3MNF2laDoG7ysSASfOOlE7oE_VUrOnw7BpM8oM0Al2XLhGlGAC7NerjMFYaiSQMv8PIRFbWkCt36WRkfIaRXFE0Pp8ahJuMAPfo8cyuqIeYnKkepqlinc=) [16] aitimes.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXkQDsYc3grqStlomgvkv3HvlQd_yXSebVtVsH-lzyPaHv4zmKHIpWecg8ZEIJshlppYWW4UgaYyUPzW1OQyVcFErRNVS1ex9nZlf-zetyx40tsENyhwzlT4rMh3K6L4t86x97L5f5zuJTnafvwL3K0lKaipA=) [17] seoulwire.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB3mfOGKCU8buUJhoM_6JP1vf9Xaq_C8FtfY2dnWJiOhJ8nQ9Z0VBA5jbormcQr0h8Eze3ayxH6lb4nbk43VTRCgkk5spFMn4tBuhm-GPN1-UzUgozrYu2kJE7lhBE4dGfPIfBY0wiItfse0y-JTiHQ==) [18] energy-news.co.kr (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfMN6CrQFS25biKa27k7xYyjTU7O3Mzh0j3vfc3XjVlod55z4UhYfnrI3bTZc0TiDmEZmUqrXJQMTqO9tJkxSEGGQwIQKM9VR9Fdd0lyaZ9pprKyKCC4ADsmngkH1QOeqMgNz0mTxnZI7xMtOaYeOiwyWH9q8IBxM_gr8=) [19] electimes.com (https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF50oFDCRet8H1d-8bQqItDXuzwNn3PuR_0LDu_64y7L45F9ccTyXs29xcUtaPwU0polR3FRvzxOTgpz0eHDI0sTt6Jsr_0bGsOwm2lLHPWQqZNAPDecAartH9dlnH5Qg46o4nbGzHRQfE9kcZXFFcsnFKmWt6jbw==)"
   }
 ]

@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="김영훈">
-<meta name="dcterms.date" content="2026-01-17">
 
-<title>제미나이 CLI 폴더별 설정 방법 – blog</title>
+<title>prd – blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,62 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,17 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">blog</span>
     </a>
   </div>
@@ -128,7 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -149,122 +112,150 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">제미나이 CLI 폴더별 설정 방법</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Gemini</div>
-                <div class="quarto-category">CLI</div>
-                <div class="quarto-category">Tutorial</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>김영훈 </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">January 17, 2026</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
+<section id="블로그-포스트-자동화-시스템-prd-product-requirements-document" class="level1">
+<h1>블로그 포스트 자동화 시스템 PRD (Product Requirements Document)</h1>
+<section id="개요" class="level2">
+<h2 class="anchored" data-anchor-id="개요">1. 개요</h2>
+<p>키워드 입력만으로 관련 정보를 수집하고, 이를 바탕으로 블로그 포스트 초안을 작성하며, 최종적으로 Quarto를 사용하여 GitHub Pages에 게시하는 전 과정을 자동화하는 시스템을 구축합니다. 이 시스템은 콘텐츠 제작 프로세스의 효율성을 극대화하는 것을 목표로 합니다.</p>
+</section>
+<section id="목표" class="level2">
+<h2 class="anchored" data-anchor-id="목표">2. 목표</h2>
+<ul>
+<li><strong>시간 절약:</strong> 정보 검색, 초안 작성, 게시 등 반복적인 작업을 자동화하여 콘텐츠 제작에 소요되는 시간을 대폭 단축합니다.</li>
+<li><strong>콘텐츠 품질 향상:</strong> 최신 정보를 신속하게 수집하고, 생성형 AI를 활용하여 콘텐츠의 질을 높입니다.</li>
+<li><strong>효율적인 워크플로우:</strong> 개발자와 콘텐츠 제작자가 최소한의 개입으로 블로그 포스트를 발행할 수 있는 간결하고 효율적인 워크플로우를 제공합니다.</li>
+</ul>
+</section>
+<section id="사용자" class="level2">
+<h2 class="anchored" data-anchor-id="사용자">3. 사용자</h2>
+<ul>
+<li><strong>블로거 및 콘텐츠 제작자:</strong> 기술 블로그, 뉴스, 리뷰 등 다양한 주제의 콘텐츠를 정기적으로 발행하는 개인 또는 팀</li>
+<li><strong>개발자:</strong> 문서 작성 및 공유 과정을 자동화하고자 하는 개발자</li>
+</ul>
+</section>
+<section id="기능-명세" class="level2">
+<h2 class="anchored" data-anchor-id="기능-명세">4. 기능 명세</h2>
+<section id="키워드로-정보-수집" class="level3">
+<h3 class="anchored" data-anchor-id="키워드로-정보-수집">4.1. 키워드로 정보 수집</h3>
+<ul>
+<li><strong>입력:</strong> 사용자가 제공하는 특정 키워드</li>
+<li><strong>프로세스:</strong>
+<ol type="1">
+<li>Google 검색 API를 활용하여 키워드와 관련된 최신 웹 문서, 뉴스, 기사 등을 수집합니다.</li>
+<li>수집된 정보의 핵심 내용을 요약하고 정리합니다.</li>
+</ol></li>
+<li><strong>출력:</strong>
+<ul>
+<li><code>search.md</code>: 수집 및 요약된 정보가 저장된 마크다운 파일</li>
+</ul></li>
+</ul>
+</section>
+<section id="이미지-생성" class="level3">
+<h3 class="anchored" data-anchor-id="이미지-생성">4.2. 이미지 생성</h3>
+<ul>
+<li><strong>입력:</strong> 블로그 포스트의 주제 또는 핵심 키워드</li>
+<li><strong>프로세스:</strong>
+<ol type="1">
+<li>Gemini 이미지 생성 API에 키워드를 전달하여 블로그 포스트의 대표 이미지 생성을 요청합니다.</li>
+<li>생성된 이미지를 지정된 형식과 크기로 다운로드합니다.</li>
+</ol></li>
+<li><strong>출력:</strong>
+<ul>
+<li><code>image.jpg</code>: 블로그 포스트에 사용될 이미지 파일</li>
+</ul></li>
+</ul>
+</section>
+<section id="블로그-포스트-초안-작성" class="level3">
+<h3 class="anchored" data-anchor-id="블로그-포스트-초안-작성">4.3. 블로그 포스트 초안 작성</h3>
+<ul>
+<li><strong>입력:</strong>
+<ul>
+<li><code>search.md</code> (수집된 정보)</li>
+<li><code>image.jpg</code> (생성된 이미지)</li>
+</ul></li>
+<li><strong>프로세스:</strong>
+<ol type="1">
+<li><code>search.md</code>의 내용을 기반으로 서론, 본론, 결론 구조를 갖춘 블로그 포스트 초안을 생성합니다.</li>
+<li>생성된 <code>image.jpg</code>를 포스트의 적절한 위치(예: 상단)에 삽입하는 마크다운 구문을 포함합니다.</li>
+<li>Quarto 형식에 맞는 메타데이터(제목, 작성자, 날짜 등)를 자동으로 추가합니다.</li>
+</ol></li>
+<li><strong>출력:</strong>
+<ul>
+<li><code>draft.md</code>: 완전한 형태의 블로그 포스트 마크다운 초안</li>
+</ul></li>
+</ul>
+</section>
+<section id="quarto를-사용한-게시-자동화" class="level3">
+<h3 class="anchored" data-anchor-id="quarto를-사용한-게시-자동화">4.4. Quarto를 사용한 게시 자동화</h3>
+<ul>
+<li><strong>입력:</strong> <code>draft.md</code></li>
+<li><strong>프로세스:</strong>
+<ol type="1">
+<li>지정된 디렉토리(예: <code>posts/YYYY-MM-DD-post-title/</code>)를 생성합니다.</li>
+<li><code>draft.md</code> 파일의 이름을 <code>index.qmd</code>로 변경하고, <code>image.jpg</code>와 함께 해당 디렉토리로 이동시킵니다.</li>
+<li>Quarto CLI를 실행하여 <code>index.qmd</code> 파일을 HTML로 렌더링합니다. (<code>quarto render</code>)</li>
+<li>생성된 <code>_site</code> 디렉토리의 내용을 GitHub 리포지토리의 <code>gh-pages</code> 브랜치 또는 메인 브랜치의 <code>/docs</code> 폴더에 푸시하여 GitHub Pages에 게시합니다.</li>
+</ol></li>
+<li><strong>출력:</strong>
+<ul>
+<li><code>posts/YYYY-MM-DD-post-title/index.html</code>: 최종적으로 웹에 게시될 HTML 파일</li>
+<li>업데이트된 GitHub Pages 사이트</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="기술-스택-제안" class="level2">
+<h2 class="anchored" data-anchor-id="기술-스택-제안">5. 기술 스택 (제안)</h2>
+<ul>
+<li><strong>정보 수집:</strong> Google Custom Search API</li>
+<li><strong>이미지 생성:</strong> Google Gemini API (Image Generation)</li>
+<li><strong>초안 작성:</strong> Google Gemini API (Text Generation)</li>
+<li><strong>게시:</strong> Quarto, Git, GitHub Actions</li>
+<li><strong>스크립트:</strong> Python 또는 Shell Script</li>
+</ul>
+</section>
+<section id="전체-작업-흐름" class="level2">
+<h2 class="anchored" data-anchor-id="전체-작업-흐름">6. 전체 작업 흐름</h2>
+<ol type="1">
+<li><strong>실행:</strong> 사용자가 메인 스크립트를 실행하며 ’키워드’를 인자로 전달합니다.
+<ul>
+<li>예: <code>python run.py "제미나이 API 최신 업데이트"</code></li>
+</ul></li>
+<li><strong>정보 수집:</strong> 스크립트가 Google 검색으로 “제미나이 API 최신 업데이트” 관련 정보를 수집하여 <code>search.md</code>에 저장합니다.</li>
+<li><strong>이미지 생성:</strong> 스크립트가 Gemini API로 관련 이미지를 생성하여 <code>image.jpg</code>로 저장합니다.</li>
+<li><strong>초안 작성:</strong> 스크립트가 <code>search.md</code>와 <code>image.jpg</code>를 조합하여 <code>draft.md</code>를 생성합니다.</li>
+<li><strong>게시:</strong>
+<ul>
+<li><code>posts/2026-01-17-gemini-api-update</code>와 같은 디렉토리를 생성합니다.</li>
+<li><code>draft.md</code>는 <code>index.qmd</code>로, <code>image.jpg</code>는 그대로 새 디렉토리로 이동됩니다.</li>
+<li>GitHub Actions 또는 로컬 스크립트가 <code>quarto render</code> 명령을 실행합니다.</li>
+<li>변경 사항이 GitHub 리포지토리에 푸시되고, 잠시 후 GitHub Pages에 새로운 글이 게시됩니다.</li>
+</ul></li>
+</ol>
+</section>
+<section id="산출물" class="level2">
+<h2 class="anchored" data-anchor-id="산출물">7. 산출물</h2>
+<ul>
+<li><code>PRD.md</code>: 본 문서</li>
+<li><code>search.md</code>: 키워드 검색 결과</li>
+<li><code>image.jpg</code>: 생성된 대표 이미지</li>
+<li><code>draft.md</code>: 블로그 포스트 초안</li>
+<li><code>posts/{post-name}/index.html</code>: 최종 게시물 HTML 파일</li>
+</ul>
 
-<p># 제미나이 CLI, 폴더(프로젝트)별로 설정하는 방법</p>
-<p>제미나이(Gemini) CLI를 사용하다 보면, 각 프로젝트의 성격에 따라 다른 설정을 적용하고 싶을 때가 있습니다. 예를 들어, 어떤 프로젝트는 <code>gemini-1.5-pro</code> 모델을 사용하고, 다른 프로젝트는 빠른 응답이 중요한 <code>gemini-1.5-flash</code> 모델을 사용하고 싶을 수 있죠.</p>
-<p>매번 <code>gemini config set</code> 명령어로 설정을 바꾸는 것은 번거롭습니다. 다행히 제미나이 CLI는 **폴더별로 설정을 다르게 적용**할 수 있는 편리한 기능을 제공합니다. 오늘 배운 내용을 정리해 보겠습니다.</p>
-<p>## 폴더별 설정은 어떻게 적용되나요?</p>
-<p>제미나이 CLI는 명령어를 실행하는 현재 폴더부터 시작해서 상위 폴더로 거슬러 올라가며 <code>.gemini/config.json</code> 파일을 찾습니다. 가장 먼저 발견되는 설정 파일을 사용하고, 만약 최상위 폴더까지 파일을 찾지 못하면 전역(global) 설정을 따르게 됩니다.</p>
-<p>이러한 원리 덕분에 우리는 각 프로젝트 폴더에 자신만의 <code>config.json</code>을 만들어 독립적인 설정을 유지할 수 있습니다.</p>
-<p>## 설정 방법</p>
-<p>방법은 아주 간단합니다.</p>
-<p>**1. 프로젝트 루트에 <code>.gemini</code> 폴더 생성**</p>
-<p>설정을 적용하고 싶은 프로젝트의 최상위 폴더(루트)로 이동하여 <code>.gemini</code>라는 이름의 폴더를 만듭니다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> .gemini</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>**2. <code>.gemini</code> 폴더 내에 <code>config.json</code> 파일 생성**</p>
-<p>방금 만든 <code>.gemini</code> 폴더 안에 <code>config.json</code>이라는 파일을 생성합니다.</p>
-<p>**3. <code>config.json</code> 파일에 원하는 설정 추가**</p>
-<p>이제 <code>config.json</code> 파일을 열어 해당 프로젝트에서만 사용하고 싶은 설정을 JSON 형식으로 추가합니다.</p>
-<p>## 예시: 프로젝트별로 다른 모델 사용하기</p>
-<p>예를 들어, 두 개의 다른 프로젝트가 있다고 가정해 보겠습니다.</p>
-<p>- <code>project-A</code> : 고품질의 결과물이 중요한 웹 개발 프로젝트</p>
-<p>- <code>project-B</code> : 빠른 아이디어 스케치가 중요한 블로그 초안 작성 프로젝트</p>
-<p>**project-A 설정**</p>
-<p><code>project-A</code> 폴더의 <code>.gemini/config.json</code> 파일에는 <code>gemini-1.5-pro</code> 모델을 사용하도록 설정합니다.</p>
-<p><code>./project-A/.gemini/config.json</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="er">&amp;nbsp;</span> <span class="dt">"model"</span><span class="fu">:</span> <span class="st">"gemini-1.5-pro"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>**project-B 설정**</p>
-<p><code>project-B</code> 폴더의 <code>.gemini/config.json</code> 파일에는 <code>gemini-1.5-flash</code> 모델을 사용하도록 설정합니다.</p>
-<p><code>./project-B/.gemini/config.json</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="er">&amp;nbsp;</span> <span class="dt">"model"</span><span class="fu">:</span> <span class="st">"gemini-1.5-flash"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>두 모델의 차이점이 궁금하신가요? 아래 표를 통해 각 모델의 특징과 권장 사용 사례를 확인해 보세요.</p>
-<div class="line-block">구분 | Gemini 1.5 Pro | Gemini 1.5 Flash |</div>
-<div class="line-block">:— | :— | :— |</div>
-<div class="line-block">**주요 특징** | 높은 정확도와 성능, 복잡한 추론 작업에 최적화 | 빠르고 비용 효율적인 작업에 최적화 |</div>
-<div class="line-block">**주요 사용 사례** | 심층 분석, 복잡한 코드 생성, 고품질 콘텐츠 작성 | 빠른 요약, 챗봇, 캡션 생성, 간단한 자동화 |</div>
-<div class="line-block">**처리 속도** | 상대적으로 느림 | 매우 빠름 |</div>
-<div class="line-block">**비용** | 상대적으로 높음 | 상대적으로 낮음 |</div>
-<div class="line-block">**컨텍스트 창** | 최대 100만 토큰 | 최대 100만 토큰 |</div>
-<p>이처럼 각 모델의 장단점을 파악하면, 프로젝트의 목표에 가장 적합한 모델을 선택하여 비용과 효율을 모두 최적화할 수 있습니다.</p>
-<p>## ⚠️ 중요: API 키 보안 및 <code>.gitignore</code> 설정</p>
-<p>프로젝트별 설정을 사용하면 매우 편리하지만, 한 가지 주의해야 할 점이 있습니다. 바로 **API 키와 같은 민감한 정보를 다루는 방법**입니다.</p>
-<p>만약 <code>config.json</code> 파일에 API 키를 직접 추가하고 이 파일을 Git 저장소에 커밋하면, API 키가 외부에 노출되어 보안 문제가 발생할 수 있습니다.</p>
-<p>### 권장하는 방법</p>
-<p>1. **API 키는 전역(Global) 설정에만 보관하세요.**</p>
-<p>&nbsp; - API 키는 <code>gemini config set api\_key YOUR\_API\_KEY</code> 명령어를 통해 한 번만 설정하면, 홈 디렉터리의 전역 설정 파일(<code>~/.gemini/config.json</code> 또는 <code>C:\\Users\\사용자명\\.gemini\\config.json</code>)에 안전하게 저장됩니다.</p>
-<p>&nbsp; - 프로젝트별 <code>config.json</code>에는 모델이나 다른 안전한 설정만 지정하세요. 제미나이 CLI는 프로젝트 설정에 API 키가 없으면 자동으로 전역 설정에서 가져와 사용합니다.</p>
-<p>2. **실수로 민감한 정보를 커밋하지 않도록 <code>.gitignore</code>를 사용하세요.**</p>
-<p>&nbsp; - 만약 프로젝트별 <code>config.json</code>에 민감한 정보를 포함해야만 하는 특별한 경우가 있다면, 해당 파일이 Git 추적에서 제외되도록 반드시 <code>.gitignore</code> 파일에 추가해야 합니다.</p>
-<p>&nbsp; - 프로젝트 루트 폴더에 <code>.gitignore</code> 파일을 만들고 아래 내용을 추가하세요.</p>
-<p>&nbsp; ```gitignore</p>
-<p>&nbsp; # 제미나이 CLI 설정 파일 (민감 정보 포함 가능성)</p>
-<p>&nbsp; .gemini/config.json</p>
-<p>&nbsp; ```</p>
-<p>&nbsp; 이렇게 하면 <code>config.json</code> 파일은 팀원들과 공유되지 않으며, 각자의 로컬 환경에만 유지됩니다.</p>
-<p>## 장점</p>
-<p>- **프로젝트 독립성**: 전역 설정을 건드리지 않고 각 프로젝트에 맞는 환경을 구축할 수 있습니다.</p>
-<p>- **협업 효율 증가**: <code>.gemini/config.json</code> 파일을 Git과 같은 버전 관리 시스템에 포함하면, 팀원 모두가 동일한 프로젝트 설정을 공유할 수 있습니다. (단, 위에 설명된 보안 지침을 반드시 준수하세요!)</p>
-<p>- **컨텍스트 자동 전환**: 프로젝트 폴더를 이동하는 것만으로 설정이 자동으로 바뀌므로, 수동으로 설정을 변경하는 번거로움이 사라집니다.</p>
-<p>## 마무리</p>
-<p>오늘은 제미나이 CLI의 폴더별 설정 방법에 대해 알아보았습니다. 이 작은 팁 하나가 개발 및 문서 작업의 효율을 크게 높여줄 수 있습니다. 앞으로 여러 프로젝트에서 제미나이를 활용할 때 꼭 적용해 보세요!</p>
-<p>오늘도 즐거운 코딩 하세요</p>
-<p>```</p>
 
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
