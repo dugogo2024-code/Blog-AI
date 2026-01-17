@@ -23,7 +23,6 @@ jobs:
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          # The target branch should be gh-pages, which is the default for GitHub Pages
-          target-branch: gh-pages
+          to: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
